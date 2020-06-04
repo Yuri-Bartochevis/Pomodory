@@ -1,12 +1,19 @@
 version: '3'
 services:
+  nginx:
+    build: ./nginx
+    links:
+      - pomodory
+    ports:
+      - "80:80"
+      - "443:443"
   db:
     build: ./database/ 
-  app:
+  pomodory:
     build: ./
-    ports:
-    - "8080:8080"
     links:
-      - db  
+      - db
+    ports:
+      - "8081:8081"  
     depends_on: 
     - db

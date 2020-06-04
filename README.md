@@ -7,4 +7,6 @@ Build docker images and run the containers
 
 Just run the containers without re-building the images
 
->$ docker run pomodorys
+
+docker-ce=18.06.1~ce~3-0~ubuntu
+nvm = node 12.13.1

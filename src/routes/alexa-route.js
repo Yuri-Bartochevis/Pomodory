@@ -7,6 +7,7 @@ const alexa = require('../alexa');
 
 var alexaRouter = express.Router();
 
+alexaRouter.get("/health",(req,res) =>{return res.status(200).send(true)});
 alexaRouter.use(verifier);
 alexaRouter.use(bodyParser.json());
 alexaRouter.post("/pomodory",alexa);
