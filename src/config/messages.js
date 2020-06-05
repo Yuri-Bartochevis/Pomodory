@@ -1,6 +1,6 @@
 const messages = {
     WELCOME: {
-        INITIAL: "Bem vindo ao pomodóry, você pode utilizá-lo para melhorar sua performance durante a execução de suas tarefas. você quer iniciar o método de pomodoro?",
+        INITIAL: "Bem vindo ao pomodóry, basta dizer configurar, para decidir a duração do pomodoro ou então iniciar para começarmos a contagem com as configurações padrão. O que deseja fazer?",
         REPROMPT: "posso iniciar o timer?"
     },
     TECHNIQUE: {

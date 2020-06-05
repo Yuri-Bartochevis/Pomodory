@@ -15,7 +15,13 @@ const getUserConfig = async (email) => {
 }
 
 const setUserConfig = async (config) => {
-    return await db.query('INSERT INTO config(email,duration,shortBreak) values ($1, $2, $3)', [config.email, config.duration, config.shortBreak]);
+  let oldConfig = await getUserConfig(config.email);
+
+    if(oldConfig == null){
+        return await db.query('INSERT INTO config(email,duration,shortBreak) values ($1, $2, $3)', [config.email, config.duration, config.shortBreak]);
+    }else{
+        return await db.query('UPDATE config set duration = $1, shortBreak = $2 WHERE email = $3', [config.email, config.duration, config.shortBreak]);
+    }
 }
 
 const logUserEffort = async (logUser) => {

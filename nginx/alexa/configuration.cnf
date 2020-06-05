@@ -1,0 +1,19 @@
+[req]
+distinguished_name = req_distinguished_name
+x509_extensions = v3_req
+prompt = no
+
+[req_distinguished_name]
+C = BR
+ST = SP
+L = SAO PAULO
+O = POMODORY
+CN = POMODORY
+
+[v3_req]
+keyUsage = keyEncipherment, dataEncipherment
+extendedKeyUsage = serverAuth
+subjectAltName = @subject_alternate_names
+
+[subject_alternate_names]
+DNS.1 = ec2-18-228-223-123.sa-east-1.compute.amazonaws.com

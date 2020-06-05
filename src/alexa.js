@@ -8,6 +8,8 @@ const No = require('./handlers/No');
 const Help = require('./handlers/Help');
 const Stop = require('./handlers/Stop');
 const TechniqueYield = require('./handlers/TechniqueYield');
+const Curiosity = require('./handlers/Curiosity');
+
 const alexa = async (req, res) => {
     let skill = Alexa.SkillBuilders.custom()
         .withSkillId("amzn1.ask.skill.305c2328-faae-42fe-943c-be7be047e38a")
@@ -21,7 +23,8 @@ const alexa = async (req, res) => {
             No,
             Help,
             Stop,
-            TechniqueYield
+            TechniqueYield,
+            Curiosity
             )
         .withApiClient(new Alexa.DefaultApiClient())
         .create();
